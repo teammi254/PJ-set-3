@@ -1,0 +1,15 @@
+[
+    {
+        "title": "ชุดสุขใจ วันอังคาร",
+        "detail": "ไก่ทอด 9 ชิ้น เพียง 159.-",
+        "image": "https://placehold.co/600x400?text=KFC+Tuesday",
+        "day": 2,
+        "url": "https://www.kfc.co.th/menu/by-bill/CAT44-31-prod"
+    },
+    {
+        "title": "โปรเทศกาลสงกรานต์",
+        "detail": "รับฟรี! ถังน้ำลาย KFC เมื่อสั่งชุดครอบครัว",
+        "image": "https://placehold.co/600x400?text=KFC+Songkran",
+        "day": null
+    }
+]
