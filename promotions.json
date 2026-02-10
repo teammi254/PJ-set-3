@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "ชุดสุขใจ วันอังคาร",
+        "detail": "ไก่ทอด 9 ชิ้น เพียง 159.- (เฉพาะวันอังคาร)",
+        "image": "https://placehold.co/600x400?text=KFC+Tuesday",
+        "type": "weekly",
+        "day": 2
+    },
+    {
+        "id": 2,
+        "title": "โปรโมชันวันสงกรานต์",
+        "detail": "ซื้อชุดครอบครัว รับฟรีถังน้ำ KFC",
+        "image": "https://placehold.co/600x400?text=Songkran+Festival",
+        "type": "festival",
+        "expiry": "2026-04-15"
+    }
+]
