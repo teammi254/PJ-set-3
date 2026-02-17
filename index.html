@@ -9,31 +9,122 @@
   <link rel="stylesheet" href="CssBase.css">
   <!-- สำหรับเขียน หน้าเพจ น้ำโดยเฉพาะ -->
   <link rel="stylesheet" href="drink.css">
-</head>
-<body>
+  <style>
+    /* เอฟเฟกต์ให้ข้อความค่อยๆ เด้งขึ้นมา */
+.container h1 {
+    animation: fadeInUp 0.8s ease-out;
+}
 
-  <nav class="shadow-sm sticky" style="background-color: #e2d6b0;">
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ปรับ Nav ปุ่มหมวดหมู่ให้ดูเด่นขึ้นเมื่อวางต่อจาก Hero */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px 10px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.05);
+    position: relative;
+    margin-top: -30px; /* ให้ปุ่มเกยขึ้นไปบน Banner นิดนึงจะดูเท่มากนะมันูน */
+    z-index: 20;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Full-width header nav (override สำหรับแถบหัวเรื่อง) */
+nav.header-fullwidth {
+    max-width: 100%;
+    margin: 0; /* ให้ชิดทั้งซ้ายและขวา */
+    border-radius: 0; /* ถ้าต้องการมุมมนให้ลบหรือปรับค่าได้ */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgba(226, 214, 176, 0.8); /* same tone as inline style */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+/* Pattern background: subtle repeating 'plate + utensil' motif for the whole page */
+.pattern-utensils{
+  background-color: #f6f7f8; /* page base color */
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3Cg%20fill='none'%20stroke='%235C3A21'%20stroke-width='4.6'%20opacity='0.12'%3E%3Ccircle%20cx='40'%20cy='40'%20r='10'/%3E%3Cpath%20d='M22%2014c2%208%208%2020%208%2028'%20stroke-linecap='round'/%3E%3Cpath%20d='M30%2018l4%2018'%20stroke-linecap='round'/%3E%3Cpath%20d='M60%2066c-3-2-2-6%201-8%203-2%206%201%204%204-2%203-5%206-8%204z'%20stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 120px 120px; /* ปรับขนาดจุดลวดลายได้ */
+  background-position: 0 0;
+  background-attachment: fixed; /* ลวดลายไม่เลื่อนเมื่อ scroll */
+}
+
+@media (max-width:640px){
+  .pattern-utensils{ background-size: 72px 72px; }
+}
+
+
+/* Category nav: full-width background + square corners */
+nav.category-nav{
+  width: 100%;
+  max-width: 100%;
+  margin: -30px 0 20px; /* เกยเล็กน้อยบน hero เหมือนเดิม */
+  border-radius: 0; /* ขอบเหลี่ยม */
+  padding: 18px 10px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+@media (max-width:640px){
+  nav.category-nav{ margin-top: -16px; padding: 12px 8px; }
+}
+  </style>
+</head>
+<body class="pattern-utensils">
+
+  <nav class="shadow-sm relative z-20 header-fullwidth" style="background-color: rgba(226, 214, 176, 0.8);">
     <div class="container mx-auto px-4 h-14 flex items-center justify-between">
         <div class="flex items-center gap-4">
             <div class="text-2xl font-bold italic tracking-tighter">
                 <span class="wongnai-blue">แนะนำ</span><span class="wongnai-orange">ใกล้ฉัน</span>
             </div>
         </div>
-
         <div class="flex items-center gap-3 text-sm text-gray-700 font-medium">
             <i class="fas fa-user-circle text-xl text-gray-600"></i>
             <span>เขียนขึ้นโดย mt.term</span>
         </div>
     </div>
-</nav>
+  </nav>
     
-<div class="banner">
-  <div class="banner-text">
-    🎉 ยินดีต้อนรับสู่"ร้านเด็ดใกล้ฉัน"
+<div class="relative overflow-hidden bg-[#e2d6b0] py-16 sm:py-24 mb-6">
+  <div class="absolute inset-0 opacity-10">
+    <i class="fas fa-utensils text-9xl absolute -left-10 -bottom-10 rotate-12"></i>
+    <i class="fas fa-store text-9xl absolute -right-10 -top-10 -rotate-12"></i>
+  </div>
+  
+  <div class="container mx-auto px-4 relative z-10 text-center">
+    <h1 class="text-4xl md:text-6xl font-black text-gray-800 mb-4 tracking-tight">
+      🎉 ยินดีต้อนรับสู่ <span class="text-[#ff7043]">ร้านเด็ดใกล้ฉัน</span>
+    </h1>
+    <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto font-medium">
+      รวบรวมร้านอาหารยอดฮิต เครื่องดื่มสุดฟิน และคาเฟ่ลับๆ ในอุดรธานี 
+      <br><span class="text-sm opacity-75">คัดสรรมาเพื่อคุณโดย mt.term</span>
+    </p>
+    
+    <div class="mt-8 flex justify-center gap-2">
+      <span class="w-12 h-1 bg-[#ff7043] rounded-full"></span>
+      <span class="w-4 h-1 bg-gray-400 rounded-full"></span>
+      <span class="w-4 h-1 bg-gray-400 rounded-full"></span>
+    </div>
   </div>
 </div>
 
-<nav>
+<nav class="category-nav">
   <a href="#" onclick="showPage('ร้านอาหาร')">
     <img src="imgStarLOGO/BUTTONVERSION3/RNGVerson/ร้านอาหารตามสั่ง-P.png" alt="" class="ButtonHome">
   </a>
@@ -132,7 +223,7 @@
       <div class="c-drink-DIV">
       <img src="imgall (1)/IMGALLCTinHead/imgContentStar/ver2/vt_Star.jpg" alt="เครื่องดื่ม">
       <div class="info">
-        <a href="">
+        <a href="หน้าเว็บเพจทั้งหมด/imgContentร้านยอดฮิตweb/1 copy/ContentF1.html">
         <h3>วีที_แหนมเนือง</h3>
         <P>ร้านยอดฮิต</P>
         </a>
@@ -143,7 +234,7 @@
       <div class="c-drink-DIV">
       <img src="imgall (1)/IMGALLCTinHead/imgContentStar/ver2/แม่หยา_Star.jpg" alt="เครื่องดื่ม">
       <div class="info">
-        <a href="">
+        <a href="หน้าเว็บเพจทั้งหมด/imgContentร้านยอดฮิตweb/1 copy 2/ContentF2.html">
         <h3>แม่หยา</h3>
         <p>ร้านยอดฮิต</p>
         </a>
@@ -154,7 +245,7 @@
       <div class="c-drink-DIV">
       <img src="imgall (1)/IMGALLCTinHead/imgContentStar/ver2/คิงส์โอช_Star.png" alt="เครื่องดื่ม">
       <div class="info">
-        <a href="">
+        <a href="หน้าเว็บเพจทั้งหมด/imgContentร้านยอดฮิตweb/1 copy 3/ContentF3.html">
         <h3>คิงส์โอชา</h3>
         <p>ร้านยอดฮิต</p>
         </a>
@@ -165,7 +256,7 @@
       <div class="c-drink-DIV">
       <img src="imgall (1)/IMGALLCTinHead/imgContentStar/ver2/ข้าวเปียกอุดร_Star.png" alt="เครื่องดื่ม">
       <div class="info">
-        <a href="">
+        <a href="หน้าเว็บเพจทั้งหมด/imgContentร้านยอดฮิตweb/1 copy 4/ContentF4.html">
         <h3>ข้าวเปียกเส้นอุดร</h3>
         <p>ร้านยอดฮิต</p>
         </a>
@@ -176,7 +267,7 @@
       <div class="c-drink-DIV">
       <img src="imgall (1)/IMGALLCTinHead/imgContentStar/ver2/ครัวคุณนิด_Star.png" alt="เครื่องดื่ม">
       <div class="info">
-        <a href="">
+        <a href="หน้าเว็บเพจทั้งหมด/imgContentร้านยอดฮิตweb/1 copy 5/ContentF5.html">
         <h3>ครัวคุณนิด</h3>
         <p>ร้านยอดฮิต</p>
         </a>
@@ -187,7 +278,7 @@
       <div class="c-drink-DIV">
       <img src="imgall (1)/IMGALLCTinHead/imgContentStar/ver2/มัจฉาผาสุข_Star.png" alt="เครื่องดื่ม">
       <div class="info">
-        <a href="">
+        <a href="หน้าเว็บเพจทั้งหมด/imgContentร้านยอดฮิตweb/1 copy 6/ContentF6.html">
         <h3>มัจฉาผาสุข</h3>
         <p>ร้านยอดฮิต</p>
         </a>
