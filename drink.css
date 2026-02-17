@@ -5,6 +5,9 @@
       margin: 10px auto;
       max-width: 900px;
       text-align: center;
+      background-color: #e2d6b0; /* same tone as header */
+      padding: 12px; /* make the background visible around cards */
+      border-radius: 12px;
 }
 
 .card-drink{
@@ -38,12 +41,17 @@
 }
 
 /* Scoped styles for the "ร้านแฟรนไซล์" section - keep KFC card the same size as other cards */
+#ร้านแฟรนไซล์{
+  background-color: #e2d6b0; /* same tone as header/hero */
+}
+
 #ร้านแฟรนไซล์ .card-grid-drink{
   grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed column width so single item doesn't stretch */
   justify-content: center; /* center the card */
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding: 12px 0; /* เพิ่มพื้นที่วางการ์ดบนพื้นหลัง */
 }
 
 #ร้านแฟรนไซล์ .card-drink{
@@ -53,6 +61,7 @@
 }
 
 @media (max-width:640px){
+  #ร้านแฟรนไซล์{ background-color: transparent; }
   #ร้านแฟรนไซล์ .card-grid-drink{ grid-template-columns: 1fr; }
   #ร้านแฟรนไซล์ .card-drink{ width: 100%; max-width: 100%; }
 }
