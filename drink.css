@@ -36,3 +36,23 @@
 .c-drink-DIV p{
     color: #ff7043;
 }
+
+/* Scoped styles for the "ร้านแฟรนไซล์" section - keep KFC card the same size as other cards */
+#ร้านแฟรนไซล์ .card-grid-drink{
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed column width so single item doesn't stretch */
+  justify-content: center; /* center the card */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ร้านแฟรนไซล์ .card-drink{
+  width: 250px;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+@media (max-width:640px){
+  #ร้านแฟรนไซล์ .card-grid-drink{ grid-template-columns: 1fr; }
+  #ร้านแฟรนไซล์ .card-drink{ width: 100%; max-width: 100%; }
+}

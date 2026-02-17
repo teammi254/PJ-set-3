@@ -51,17 +51,36 @@
     }
 
     nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
       color: #ff7043;
       font-weight: bold;
       padding: 8px 12px;
       border-radius: 20px;
       background-color: #ffffff;
-      transition: 0.3s;
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 200ms ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* เงาด้านหลัง (ปกติ) */
     }
 
     nav a:hover {
       background-color: #ffccbc;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
+      transform: translateY(-2px);
+    }
+
+    /* กดปุ่ม (active) ให้เห็นเงาชัดขึ้นแต่ยุบเล็กน้อย */
+    nav a:active, nav a[aria-pressed="true"] {
+      transform: translateY(1px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+    }
+
+    /* สำหรับการเข้าถึง (keyboard focus) */
+    nav a:focus {
+      outline: 3px solid rgba(21,101,192,0.12);
+      outline-offset: 4px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.14);
     }
 
     .ButtonHome{
@@ -97,7 +116,7 @@
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -121,7 +140,13 @@
       padding: 15px;
       background-color: #ffe0b2;
       color: #d84315;
-      font-size: 0.9em;
+      font-size: 0.95em;
+    }
+
+    p footer {
+      margin: 5px 0 0;
+      font-size: 0.5em;
+      color: #555;
     }
 
     /* นำเข้าฟอนต์ Kanit จาก Google Fonts */
