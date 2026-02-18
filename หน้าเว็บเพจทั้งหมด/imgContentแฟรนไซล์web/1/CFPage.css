@@ -62,3 +62,16 @@ body {
 .animate-scale-up {
     animation: scale-up 0.3s ease-out;
 }
+
+/* Sticky footer layout: make footer sit at bottom when content is short */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.site-main {
+    flex: 1 0 auto; /* allow main content to grow and push footer to bottom */
+}
