@@ -56,17 +56,22 @@ nav.header-fullwidth {
 }
 
 /* Pattern background: subtle repeating 'plate + utensil' motif for the whole page */
-.pattern-utensils{
-  background-color: #f6f7f8; /* page base color */
-  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3Cg%20fill='none'%20stroke='%235C3A21'%20stroke-width='4.6'%20opacity='0.12'%3E%3Ccircle%20cx='40'%20cy='40'%20r='10'/%3E%3Cpath%20d='M22%2014c2%208%208%2020%208%2028'%20stroke-linecap='round'/%3E%3Cpath%20d='M30%2018l4%2018'%20stroke-linecap='round'/%3E%3Cpath%20d='M60%2066c-3-2-2-6%201-8%203-2%206%201%204%204-2%203-5%206-8%204z'%20stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
+/* ลายพื้นหลัง จาน ช้อน ส้อม (Plate & Utensils Pattern) นะมันูน */
+.pattern-utensils {
+  background-color: #f6f7f8; /* สีพื้นหลัง */
+  /* วาดรูป จาน (วงกลม) + ช้อน (วงรี) + ส้อม (เส้นสามแฉก) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%235C3A21' stroke-width='2.5' opacity='0.1'%3E%3C!-- จาน --%3E%3Ccircle cx='50' cy='50' r='18'/%3E%3Ccircle cx='50' cy='50' r='12'/%3E%3C!-- ช้อน (ขวา) --%3E%3Cpath d='M75 40c2 0 4 3 4 7s-2 7-4 7-4-3-4-7 2-7 4-7z'/%3E%3Cpath d='M75 54v12' stroke-linecap='round'/%3E%3C!-- ส้อม (ซ้าย) --%3E%3Cpath d='M25 40v8M21 40v8M29 40v8' stroke-linecap='round'/%3E%3Cpath d='M21 48c0 3 2 5 4 5s4-2 4-5'/%3E%3Cpath d='M25 53v13' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat;
-  background-size: 120px 120px; /* ปรับขนาดจุดลวดลายได้ */
+  background-size: 140px 140px; /* ปรับขนาดความห่างของลายตรงนี้ได้นะมันูน */
   background-position: 0 0;
-  background-attachment: fixed; /* ลวดลายไม่เลื่อนเมื่อ scroll */
+  background-attachment: fixed;
 }
 
-@media (max-width:640px){
-  .pattern-utensils{ background-size: 72px 72px; }
+/* ปรับขนาดลายให้เล็กลงเมื่อดูในมือถือนะมันูน */
+@media (max-width: 640px) {
+  .pattern-utensils {
+    background-size: 90px 90px;
+  }
 }
 
 
