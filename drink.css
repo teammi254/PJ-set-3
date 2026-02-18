@@ -15,6 +15,12 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-drink:hover{
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
 .c-drink-DIV{
